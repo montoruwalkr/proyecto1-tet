@@ -6,6 +6,6 @@ BBdefault: &default
   pool: 5  
   host: db 
 
-production:  
+development:  
   <<: *default  
-  database: proyecto1-tet-production
+  database: proyecto1-tet-development
