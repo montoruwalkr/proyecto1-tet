@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Title:</strong>
   <%= @route.title %>
@@ -12,7 +10,7 @@
 
 <p>
   <strong>User:</strong>
-  <%= @route.user %>
+  <%= @route.user.username %>
 </p>
 
 <%= link_to 'Edit', edit_route_path(@route) %> |

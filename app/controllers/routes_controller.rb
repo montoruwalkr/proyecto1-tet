@@ -1,5 +1,6 @@
 class RoutesController < ApplicationController
   before_action :set_route, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user! ##, except: [:show, :index]
 
   # GET /routes
   # GET /routes.json
@@ -25,6 +26,7 @@ class RoutesController < ApplicationController
   # POST /routes.json
   def create
     @route = Route.new(route_params)
+    @route.user = current_user
 
     respond_to do |format|
       if @route.save
@@ -69,6 +71,6 @@ class RoutesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def route_params
-      params.require(:route).permit(:title, :route, :user_id)
+      params.require(:route).permit(:title, :route)
     end
 end
