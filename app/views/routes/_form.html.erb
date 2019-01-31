@@ -1,3 +1,19 @@
+ <script>
+var x = document.getElementById("demo");
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else {
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude +
+  "<br>Longitude: " + position.coords.longitude;
+}
+</script> 
+
 <%= form_with(model: route, local: true) do |form| %>
   <% if route.errors.any? %>
     <div id="error_explanation">
@@ -16,7 +32,10 @@
     <%= form.text_field :title, id: :route_title %>
   </div>
 
-  <div class="field">
+  <!-- HTML5 Get Location-->
+
+
+  <div class="field" id="demo">
     <%= form.label :route %>
     <%= form.text_field :route, id: :route_route %>
   </div>
