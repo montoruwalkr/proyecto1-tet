@@ -17,9 +17,9 @@
   </div>
 
   <!-- HTML5 Get Location-->
+  <button onclick="getLocation()">Start Route Recording</button>
 
-
-  <div class="field" id="demo">
+  <div class="field" id="coordinates">
     <%= form.label :route %>
     <%= form.text_field :route, id: :route_route %>
   </div>
@@ -28,3 +28,22 @@
     <%= form.submit %>
   </div>
 <% end %>
+
+
+
+<script>
+var x = document.getElementById("coordinates");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
+</script>
