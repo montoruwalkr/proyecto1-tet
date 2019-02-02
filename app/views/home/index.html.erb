@@ -22,24 +22,25 @@
 
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 
+<p>Click the button to get your coordinates.</p>
+
+<button onclick="getLocation()">Try It</button>
+
+<p id="demo"></p>
+
 <script>
-	
-	$('#location-button').click(function(){
-
-		if (navigator.geolocation)
-			navigator.geolocation.getCurrentPosition(function(position){
-				console.log(position);
-			});
-		else
-			console.log("Geolocation is not suppored");
-	});
-
-function showPosition(position) {
-  var latlon = position.coords.latitude + "," + position.coords.longitude;
-
-  var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="+latlon+"&zoom=14&size=400x300&sensor=false&key= AIzaSyDeUQUS8cr8Zph-6wo31-gDmgXxDE8sODA";
-
-  document.getElementById("mapholder").innerHTML = "<img src='"+img_url+"'>";
+var x = document.getElementById("demo");
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.watchPosition(showPosition);
+    console.log(position);
+  } else {
+    x.innerHTML = "Geolocation is not supported by this browser.";
+    console.log("Geolocation is not suppored");
+  }
 }
-
-</script>
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude +
+  "<br>Longitude: " + position.coords.longitude;
+}
+</script> 
