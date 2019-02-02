@@ -16,15 +16,20 @@
 
 <% end %>
 
-<script>
 
-const $geolocateButton = document.getElementById('geolocation-button');
-$geolocateButton.addEventListener('click', geolocate);
+<button id="location-button">Get User Location</button>
+<div id="output"></div>
 
-function geolocate() {
-  if (window.navigator && window.navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(onGeolocateSuccess, onGeolocateError);
-  }
-}
+<script type="text/javascript">
+	
+	$('#location-button').click(function(){
+
+		if (navigator.geolocation)
+			navigator.geolocation.getCurrentPosition(function(position){
+				console.log(position);
+			});
+		else
+			console.log("Geolocation is not suppored");
+	});
 
 </script>
