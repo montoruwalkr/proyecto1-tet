@@ -15,29 +15,3 @@
 <%= link_to 'Sign in', new_user_session_path %>
 
 <% end %>
-
-<!-- HTML5 GeoLocation-->
-
-<br>
-<br>
-
-<button onclick="getLocation()">Start Route Recording</button>
-
-<p id="coordinates"></p>
-
-<script>
-var x = document.getElementById("coordinates");
-
-function getLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
-  } else { 
-    x.innerHTML = "Geolocation is not supported by this browser.";
-  }
-}
-
-function showPosition(position) {
-  x.innerHTML = "Latitude: " + position.coords.latitude + 
-  "<br>Longitude: " + position.coords.longitude;
-}
-</script>
