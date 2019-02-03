@@ -23,7 +23,6 @@
 
 <button onclick="stopLocation()">Stop Record</button>
 
-
 <p id="demo"></p>
 
 <script>
@@ -40,13 +39,6 @@ function showPosition(position) {
   x.innerHTML = "Latitude: " + position.coords.latitude +
   "<br>Longitude: " + position.coords.longitude;
   console.log(position);
-
-  var latlon = position.coords.latitude + "," + position.coords.longitude;
-
-  var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="+latlon+"&zoom=14&size=400x300&sensor=false&key=AIzaSyDeUQUS8cr8Zph-6wo31-gDmgXxDE8sODA";
-
-  document.getElementById("mapholder").innerHTML = "<img src='"+img_url+"'>";
-
 }
 
 function stopLocation() {
@@ -55,5 +47,6 @@ function stopLocation() {
 	    console.log("Finished Geolocation");
 
 }
+
 
 </script>
