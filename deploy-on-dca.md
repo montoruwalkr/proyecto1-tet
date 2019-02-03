@@ -5,7 +5,7 @@ By: Alex Montoya Franco - amonto69@eafit.edu.co
 # Despliegue en el DCA con Docker
 
 
-## se instala docker en la máquina virtual del DCA
+## Instalar docker en la máquina virtual del DCA
 
     $ sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
     $ sudo yum install docker-ce
