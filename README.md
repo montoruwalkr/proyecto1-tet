@@ -6,10 +6,10 @@ By: Alex Montoya Franco - amonto69@eafit.edu.co
 
 * [Análisis y Diseño](analisis-diseno.md)
 
-# 2. DespliEgue en DCA con Docker
+# 2. Despliegue en DCA con Docker
 
 * [Despliegue en DCA](deploy-on-dca.md)
 
-# 3. Despliege en Amazon Web Services con Docker
+# 3. Despliegue en Amazon Web Services con Docker
 
 * [Despliegue en AWS](deploy-on-aws.md)
