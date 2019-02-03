@@ -26,28 +26,77 @@
   </div>
 <% end %>
 
-  <button onclick="getLocation()">Record Route</button>
 
-| <button onclick="stopLocation()">Stop Record</button>
+<!-- Geolocation and LeafLet-->
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>  
+
+<a href="#" id="show" class="btn">Show Map</a>
+<div id="map" class="map"></div> 
+
+<style type="text/css">
+  
+  html, body {
+  height: 100%
+}
+
+  .map {
+    height: 300px;
+  }
+
+  .btn {
+    background-color: rgba(10, 10, 230, .5);
+    border: 0;
+    color: #fff;
+    padding: 10px;
+    text-shadow: 0 0 1px rgba(0, 0, 0, .3);
+    text-decoration: none;
+    margin: 0.5rem 0 1rem;
+    display: inline-block;
+  }
+
+</style>
 
 <script>
-  function getLocation() {
-    if (navigator.geolocation) {
-      navigator.geolocation.watchPosition(showPosition);
-    } else {
-      console.log("Geolocation is not suppored");
-    }
-  }
+  // Get current position successfully
+function success(position) {
+  var map, marker,
+      latitude = position.coords.latitude,
+      longitude = position.coords.longitude;
   
-  function showPosition(position) {
-    console.log(position);
+  // Instance map using leaflet
+  map = L.map('map').setView([latitude, longitude], 13);
+  
+  // Tile layer using key api at cloudmade.com
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    key: '760506895e284217a7442ce2efe97797',
+    styleId: 103288,
+    maxZoom: 16
+  }).addTo(map);
+
+  // Marker using leaflet
+  marker = L.marker([latitude, longitude]).addTo(map);
+
+  // Popup in leaflet
+  marker.bindPopup('<p>This is your current location</p>').openPopup();
+}
+
+// Get current position fail
+function error() {
+  alert('Get current position fail. Please access codepen to get geolocation.');
+}
+
+// Init load document
+var show = document.getElementById('show');
+
+show.addEventListener('click', function(e) {
+  e.preventDefault();
+  if (!navigator.geolocation) {
+    console.log("Browser doesn't support geolocation");
+  } else {
+    navigator.geolocation.getCurrentPosition(success, error);
   }
-
-  function stopLocation() {
-    var watchID;
-    navigator.geolocation.clearWatch(watchID);
-        console.log("Finished Geolocation");
-
-  }
-
+}, false);
 </script>
+

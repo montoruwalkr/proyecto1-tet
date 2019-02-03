@@ -59,6 +59,8 @@ function stopLocation() {
 <!-- Geolocation and Leaflet -->
 <!-- https://codepen.io/dangvanthanh/pen/tlpLG -->
 
+<!--
+
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css">
 <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>  
 
@@ -109,7 +111,7 @@ function success(position) {
   marker = L.marker([latitude, longitude]).addTo(map);
 
   // Popup in leaflet
-  marker.bindPopup('<p>Your location</p>').openPopup();
+  marker.bindPopup('<p>This is your current location</p>').openPopup();
 }
 
 // Get current position fail
@@ -129,3 +131,5 @@ show.addEventListener('click', function(e) {
   }
 }, false);
 </script>
+
+-->
