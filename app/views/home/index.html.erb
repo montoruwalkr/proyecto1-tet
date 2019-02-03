@@ -44,6 +44,8 @@ function showPosition(position) {
 }
 
 function stopLocation() {
-	navigator.geolocation.clearWatch();
+	var watchID;
+	navigator.geolocation.clearWatch(watchID);
+
 }
 </script>
