@@ -91,7 +91,7 @@ show.addEventListener('click', function(e) {
     console.log("Browser doesn't support geolocation");
   } else {
     navigator.geolocation.getCurrentPosition(success, error);
-    console.log("Lat: " + latitude+", Lon: " + longitude);
+    console.log("Lat: " + position.coords.latitude+", Lon: " + position.coords.longitude);
   }
 }, false);
 </script>
