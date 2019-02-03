@@ -6,7 +6,7 @@ By: Alex Montoya Franco - amonto69@eafit.edu.co
 
 * [Análisis y Diseño](analisis-diseno.md)
 
-# 2. Despligue en DCA con Docker
+# 2. DespliEgue en DCA con Docker
 
 * [Despliegue en DCA](deploy-on-dca.md)
 
