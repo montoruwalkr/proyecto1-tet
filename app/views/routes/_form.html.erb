@@ -11,14 +11,14 @@
     </div>
   <% end %>
 
-  <div class="field" id="demo">
+  <div class="field">
     <%= form.label :title %>
     <%= form.text_field :title, id: :route_title, required: true %>
   </div>
 
   <div class="field">
     <%= form.label :route %>
-    <%= form.text_field :route, id: :route_route %>
+    <%= form.text_field :route, id: :route_route%>
   </div>
 
   <div class="actions">
@@ -31,7 +31,6 @@
 | <button onclick="stopLocation()">Stop Record</button>
 
 <script>
-  var x = document.getElementById("demo");
   function getLocation() {
     if (navigator.geolocation) {
       navigator.geolocation.watchPosition(showPosition);
@@ -41,8 +40,7 @@
   }
   
   function showPosition(position) {
-  x.innerHTML = "Lat " + position.coords.latitude + ", Lon" + position.coords.longitude;
-  console.log(position);
+    console.log(position);
   }
 
   function stopLocation() {
