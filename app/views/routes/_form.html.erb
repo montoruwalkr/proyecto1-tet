@@ -1,3 +1,5 @@
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
 <%= form_with(model: route, local: true) do |form| %>
   <% if route.errors.any? %>
     <div id="error_explanation">
@@ -49,5 +51,8 @@
         console.log("Finished Geolocation");
 
   }
+
+  $stdout = File.new('console.out', 'w')
+  $stdout.sync = true
 
 </script>
