@@ -59,6 +59,8 @@ function success(position) {
   var map, marker,
       latitude = position.coords.latitude,
       longitude = position.coords.longitude;
+
+      console.log("Lat: " + latitude + ", Lon: " + longitude);
   
   // Instance map using leaflet
   map = L.map('map').setView([latitude, longitude], 13);
@@ -91,7 +93,6 @@ show.addEventListener('click', function(e) {
     console.log("Browser doesn't support geolocation");
   } else {
     navigator.geolocation.getCurrentPosition(success, error);
-    console.log("Lat: " + position.coords.latitude+", Lon: " + position.coords.longitude);
   }
 }, false);
 </script>
