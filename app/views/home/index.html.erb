@@ -24,7 +24,9 @@
 
 <p>Click the button to get your coordinates.</p>
 
-<button onclick="getLocation()">Try It</button>
+<button onclick="getLocation()">Record Route</button>
+
+<button onclick="stopLocation()">Stop Record</button>
 
 <p id="demo"></p>
 
@@ -43,4 +45,8 @@ function showPosition(position) {
   "<br>Longitude: " + position.coords.longitude;
   console.log(position);
 }
-</script> 
+
+function stopLocation() {
+	navigator.geolocation.clearWatch();
+}
+</script>
