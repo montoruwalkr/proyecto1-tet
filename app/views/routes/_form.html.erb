@@ -19,7 +19,8 @@
   <!--añadir campo coordenadas que sea el array positions de javascript, guardo ese array y en la vista show pongo el mapa que renderiza
   las coordenadas-->
   <div class="field">
-    <%= form.hidden_field :coordinates, required: true %>
+    <%= form.label :coordinates %>
+    <%= form.text_field :coordinates %>
   </div>
 
   <div class="actions">
