@@ -86,22 +86,23 @@ https://leafletjs.com/examples/quick-start/
 	    accessToken: 'pk.eyJ1IjoibW9udG9ydXdhbGtyIiwiYSI6ImNqcnhtdTcwYzBwNno0M210bnFyemRtcmcifQ.YIy7MO-M8Hgf61hkqxCl1Q'
 	}).addTo(mymap2);
 
-	// create a red polyline from an array of LatLng points
-	/*var latlngs = [
-	    [45.51, -122.68],
-	    [37.77, -122.43],
-	    [34.04, -118.2]
-	];*/
-
 	/* https://leafletjs.com/reference-1.4.0.html#polyline <addLatLng(<LatLng> latlng)> < getLatLngs > */
 
-	var latlngs = [
+	/*var latlngs = [
 	    [[45.51, -122.68],
 	     [37.77, -122.43],
 	     [34.04, -118.2]],
 	    [[40.78, -73.91],
 	     [41.83, -87.62],
 	     [32.76, -96.72]]
+	];*/
+
+
+	// create a red polyline from an array of LatLng points
+	var latlngs = [
+	    [45.51, -122.68],
+	    [37.77, -122.43],
+	    [34.04, -118.2]
 	];
 
 	var polyline = L.polyline(latlngs, {color: 'red'}).addTo(mymap2);
