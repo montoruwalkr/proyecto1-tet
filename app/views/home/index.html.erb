@@ -18,6 +18,15 @@
 
 <!-- Geolocation -->
 
+<div id="mapid"></div>
+
+<style type="text/css">
+	
+	#mapid { height: 180px; }
+
+</style>
+
+
 <script type="text/javascript">
 
 	var mymap = L.map('mapid').setView([51.505, -0.09], 13);
@@ -30,11 +39,3 @@
 	}).addTo(mymap);
 
 </script>
-
-<style type="text/css">
-	
-	#mapid { height: 180px; }
-
-</style>
-
-<div id="mapid"></div>
