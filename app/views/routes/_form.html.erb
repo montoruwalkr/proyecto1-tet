@@ -29,9 +29,20 @@
 
 <p id="demo"></p>
 
-<script>
+
+<style type="text/css">
   
+  #map { height: 300px; }
+
+</style>
+
+<div id="map"></div>
+
+
+<script>
+
   var x = document.getElementById("demo");
+  var mymap, marker, latitude, longitude;
 
   function getLocation() {
     if (navigator.geolocation) {
@@ -43,8 +54,25 @@
   }
 
   function showPosition(position) {
-    x.innerHTML = "Latitude: " + position.coords.latitude +
-    "<br>Longitude: " + position.coords.longitude;
+    latitude = position.coords.latitude;
+    longitude = position.coords.longitude;
+
+    // Drawing Map
+    mymap = L.map('map').setView([latitude, longitude], 13);
+
+    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        maxZoom: 18,
+        id: 'mapbox.streets',
+        accessToken: 'pk.eyJ1IjoibW9udG9ydXdhbGtyIiwiYSI6ImNqcnhtdTcwYzBwNno0M210bnFyemRtcmcifQ.YIy7MO-M8Hgf61hkqxCl1Q'
+    }).addTo(mymap);
+
+    marker = L.marker([latitude, longitude]).addTo(mymap);
+        
+    marker.bindPopup('<p>This is your current location</p>').openPopup();
+
+    x.innerHTML = "Latitude: " + latitude +
+    "<br>Longitude: " + longitude;
     console.log(position);
   }
 
@@ -55,70 +83,3 @@
   }
 
 </script>
-
-
-
-<!-- Geolocation and Leaflet -->
-<!-- https://codepen.io/dangvanthanh/pen/tlpLG -->
-
-<!--
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css">
-<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>  
-<a href="#" id="show" class="btn">Show Map</a>
-<div id="map" class="map"></div> 
-<style type="text/css">
-  
-  html, body {
-  height: 100%
-}
-  .map {
-    height: 300px;
-  }
-  .btn {
-    background-color: rgba(10, 10, 230, .5);
-    border: 0;
-    color: #fff;
-    padding: 10px;
-    text-shadow: 0 0 1px rgba(0, 0, 0, .3);
-    text-decoration: none;
-    margin: 0.5rem 0 1rem;
-    display: inline-block;
-  }
-</style>
-<script>
-  // Get current position successfully
-function success(position) {
-  var map, marker,
-      latitude = position.coords.latitude,
-      longitude = position.coords.longitude;
-  
-  // Instance map using leaflet
-  map = L.map('map').setView([latitude, longitude], 13);
-  
-  // Tile layer using key api at cloudmade.com
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    key: '760506895e284217a7442ce2efe97797',
-    styleId: 103288,
-    maxZoom: 16
-  }).addTo(map);
-  // Marker using leaflet
-  marker = L.marker([latitude, longitude]).addTo(map);
-  // Popup in leaflet
-  marker.bindPopup('<p>This is your current location</p>').openPopup();
-}
-// Get current position fail
-function error() {
-  alert('Get current position fail. Please access codepen to get geolocation.');
-}
-// Init load document
-var show = document.getElementById('show');
-show.addEventListener('click', function(e) {
-  e.preventDefault();
-  if (!navigator.geolocation) {
-    console.log("Browser doesn't support geolocation");
-  } else {
-    navigator.geolocation.getCurrentPosition(success, error);
-  }
-}, false);
-</script>
--->
