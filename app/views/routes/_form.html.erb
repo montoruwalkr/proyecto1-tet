@@ -13,12 +13,12 @@
 
   <div class="field">
     <%= form.label :title %>
-    <%-# <%= form.text_field :title, id: :route_title, required: true -%>
-    <%= form.hidden_field :title, id: :route_title, :value => "5" %>
+    <%= form.text_field :title, id: :route_title, required: true %>
   </div>
 
   <!--añadir campo coordenadas que sea el array positions de javascript, guardo ese array y en la vista show pongo el mapa que renderiza
   las coordenadas-->
+  <%= form.hidden_field :coordinates, id: :route_coordinates, :value => "5" %>
 
   <div class="actions">
     <%= form.submit %>
