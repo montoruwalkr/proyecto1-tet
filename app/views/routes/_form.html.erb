@@ -42,7 +42,7 @@
 <script>
 
   var x = document.getElementById("demo");
-  var mymap, marker, latitude, longitude;
+  var mymap, marker1, marker2, latitude, longitude;
   var positions = [];
 
   function getLocation() {
@@ -84,19 +84,14 @@
         accessToken: 'pk.eyJ1IjoibW9udG9ydXdhbGtyIiwiYSI6ImNqcnhtdTcwYzBwNno0M210bnFyemRtcmcifQ.YIy7MO-M8Hgf61hkqxCl1Q'
     }).addTo(mymap);
 
-    marker = L.marker([latitude, longitude]).addTo(mymap);
-        
-    marker.bindPopup('<p>This is your current location</p>').openPopup();
+    marker1 = L.marker(positions[0]).addTo(mymap);
+    marker1.bindPopup('<p>This was your first location</p>').openPopup();
+
+    marker2 = L.marker(positions[positions.length-1]).addTo(mymap);
+    marker2.bindPopup('<p>This is your current location</p>').openPopup();
 
     // create a red polyline from an array of LatLng points
-    /*var latlngs = [
-        [6.289143161143818, -75.56481357513645],
-        [5.289143161143818, -74.56481357513645],
-        [3.289143161143818, -78.56481357513645]
-    ];*/
-
     var polyline = L.polyline(positions, {color: 'red'}).addTo(mymap);
-    //var polyline = L.polyline(latlngs, {color: 'red'}).addTo(mymap);
     
     // zoom the map to the polyline
     mymap.fitBounds(polyline.getBounds());
