@@ -81,6 +81,18 @@
         
     marker.bindPopup('<p>This is your current location</p>').openPopup();
 
+    // create a red polyline from an array of LatLng points
+    var latlngs = [
+        [6.289143161143818, -75.56481357513645],
+        [5.289143161143818, -74.56481357513645],
+        [3.289143161143818, -78.56481357513645]
+    ];
+
+    var polyline = L.polyline(latlngs, {color: 'red'}).addTo(mymap);
+    // zoom the map to the polyline
+    mymap.fitBounds(polyline.getBounds());
+
+
   }
 
 </script>
