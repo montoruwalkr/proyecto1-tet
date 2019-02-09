@@ -57,7 +57,17 @@
     latitude = position.coords.latitude;
     longitude = position.coords.longitude;
 
-    // Drawing Map
+    x.innerHTML = "Latitude: " + latitude +
+    "<br>Longitude: " + longitude;
+    console.log(position);
+  }
+
+  function stopLocation() {
+    var watchID;
+    navigator.geolocation.clearWatch(watchID);
+        console.log("Finished Geolocation");
+
+        // Drawing Map
     mymap = L.map('map').setView([latitude, longitude], 13);
 
     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
@@ -71,15 +81,6 @@
         
     marker.bindPopup('<p>This is your current location</p>').openPopup();
 
-    x.innerHTML = "Latitude: " + latitude +
-    "<br>Longitude: " + longitude;
-    console.log(position);
-  }
-
-  function stopLocation() {
-    var watchID;
-    navigator.geolocation.clearWatch(watchID);
-        console.log("Finished Geolocation");
   }
 
 </script>
