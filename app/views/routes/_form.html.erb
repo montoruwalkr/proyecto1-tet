@@ -1,4 +1,11 @@
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+    <p class="lead">
+        <button onclick="getLocation()", class="btn btn-lg btn-secondary">Record Route</button>
+
+        <button onclick="stopLocation()", class="btn btn-lg btn-secondary">Stop Record</button>
+    </p>
+
 <%= form_with(model: route, local: true) do |form| %>
   <% if route.errors.any? %>
     <div id="error_explanation">
@@ -28,14 +35,6 @@
 
 <!-- :value=>@positions -->
 <!-- Geolocalization -->
-
-<br><br><br>
-      <p class="lead">
-        <button onclick="getLocation()", class="btn btn-lg btn-secondary">Record Route</button>
-
-        <button onclick="stopLocation()", class="btn btn-lg btn-secondary">Stop Record</button>
-    </p>
-
 
 <p id="demo"></p>
 
