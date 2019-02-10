@@ -17,10 +17,10 @@
   </div>
 
   <% @positions = "Home Page" %>
-  <h3><%= @my_home %></h3>
+  <h3><%= @positions %></h3>
 
   <div class="field">
-    <%= form.hidden_field :coordinates, required: true, :value=>@my_home %>
+    <%= form.hidden_field :coordinates, required: true, :value=>@positions %>
   </div>
 
   <div class="actions">
