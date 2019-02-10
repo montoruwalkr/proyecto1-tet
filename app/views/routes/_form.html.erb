@@ -21,18 +21,18 @@
     <%= form.hidden_field :coordinates, required: true, :id=>"tracking"%>
   </div>
 
-  <br>
-  <button onclick="getLocation()", class="btn btn-primary">Record Route</button>
-  <br>
-  <button onclick="stopLocation()", class="btn btn-primary">Stop Record</button>
-
-  <div class="actions">
+  <div class="btn btn-primary">
     <%= form.submit %>
   </div>
 <% end %>
 
 <!-- :value=>@positions -->
 <!-- Geolocalization -->
+
+<br>
+<button onclick="getLocation()", class="btn btn-primary">Record Route</button>
+<br>
+<button onclick="stopLocation()", class="btn btn-primary">Stop Record</button>
 
 <p id="demo"></p>
 
