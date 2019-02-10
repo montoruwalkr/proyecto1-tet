@@ -19,22 +19,38 @@
 <script type="text/javascript">
 	
 	var tracking = '<%=@route.coordinates%>';
-	console.log(tracking);
-
-	var track = [[]]
 
 	var positions = tracking.split(',');
-
-   	for (var i=0; i < positions.length; i++) {
-      console.log(positions[i]);
-   	}
+	var trajectory = [[]];
 
    	for (var i=0; i < positions.length-1; i=i+2) {
-      track.push([positions[i], positions[i+1]]); 
+      trajectory.push([positions[i], positions[i+1]]); 
    	}
 
-   	console.log(track)
+   	console.log(trajectory);
 
-	//necesito que quede asi: [ [1,2],[3,4] ]
+
+   	    // Drawing Map
+
+    mymap = L.map('map').setView(trajectory[0], 13);
+
+    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        maxZoom: 18,
+        id: 'mapbox.streets',
+        accessToken: 'pk.eyJ1IjoibW9udG9ydXdhbGtyIiwiYSI6ImNqcnhtdTcwYzBwNno0M210bnFyemRtcmcifQ.YIy7MO-M8Hgf61hkqxCl1Q'
+    }).addTo(mymap);
+
+    marker1 = L.marker(trajectory[0]).addTo(mymap);
+    marker1.bindPopup('<p>This was your first location</p>').openPopup();
+
+    marker2 = L.marker(trajectory[trajectory.length-1]).addTo(mymap);
+    marker2.bindPopup('<p>This is your current location</p>').openPopup();
+
+    // create a red polyline from an array of LatLng points
+    var polyline = L.polyline(trajectory, {color: 'red'}).addTo(mymap);
+    
+    // zoom the map to the polyline
+    mymap.fitBounds(polyline.getBounds());
 
 </script>
