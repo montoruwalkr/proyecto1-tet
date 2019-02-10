@@ -12,11 +12,11 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title, id: :route_title, required: true %>
+  <div class="form-group">
+    <%= form.label :title %><br />
+    <%= form.text_field :title, id: :route_title, required: true, autofocus: true, :class => "form-control", :placeholder => "Enter a Title" %>
   </div>
- 
+
   <div class="field">
     <%= form.hidden_field :coordinates, required: true, :id=>"tracking"%>
   </div>
@@ -29,8 +29,8 @@
 <!-- :value=>@positions -->
 <!-- Geolocalization -->
 
-<button onclick="getLocation()">Record Route</button>
-<button onclick="stopLocation()">Stop Record</button>
+<button onclick="getLocation()", class="btn btn-primary">Record Route</button>
+<button onclick="stopLocation()", class="btn btn-primary">Stop Record</button>
 
 <p id="demo"></p>
 
