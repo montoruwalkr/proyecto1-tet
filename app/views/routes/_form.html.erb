@@ -16,11 +16,9 @@
     <%= form.label :title %>
     <%= form.text_field :title, id: :route_title, required: true %>
   </div>
-
-  <% @positions = "Home Page" %>
  
   <div class="field">
-    <%= form.hidden_field :coordinates, required: true, :id=>"email_field"%>
+    <%= form.hidden_field :coordinates, required: true, :id=>"tracking"%>
   </div>
 
   <div class="actions">
@@ -28,7 +26,7 @@
   </div>
 <% end %>
 
-
+<!-- :value=>@positions -->
 <!-- Geolocalization -->
 
 <button onclick="getLocation()">Record Route</button>
@@ -102,9 +100,10 @@
     // zoom the map to the polyline
     mymap.fitBounds(polyline.getBounds());
 
-    var my_email= "my@email.com"
+    positions.toString();
+    var tracking = positions
       $(document).ready(function(){
-        $("#email_field").val(my_email);
+        $("#tracking").val(tracking);
     });
 
 
