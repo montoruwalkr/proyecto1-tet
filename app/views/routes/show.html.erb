@@ -16,6 +16,15 @@
 <%= link_to 'Edit', edit_route_path(@route) %> |
 <%= link_to 'Back', routes_path %>
 
+
+<style type="text/css">
+  
+  #map { height: 300px; }
+
+</style>
+
+<div id="map"></div>
+
 <script type="text/javascript">
 	
 	var tracking = '<%=@route.coordinates%>';
