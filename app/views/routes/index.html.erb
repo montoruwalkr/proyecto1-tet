@@ -39,7 +39,7 @@
           <td><%= route.title %></td>
           <td><%= route.user.username %></td>
 
-          <td><%= link_to 'Show', route, :class=>"btn btn-success btn-xs" %><%= link_to 'Edit', edit_route_path(route), :class=>"btn btn-info btn-xs" %><%= link_to 'Delete', route, method: :delete, data: { confirm: 'Are you sure?' }, :class=>"btn btn-danger btn-xs" %></td>
+          <td><%= link_to 'Show', route, :class=>"btn btn-success" %><%= link_to 'Edit', edit_route_path(route), :class=>"btn btn-info" %><%= link_to 'Delete', route, method: :delete, data: { confirm: 'Are you sure?' }, :class=>"btn btn-danger" %></td>
 
         </tr>
       <% end %>
