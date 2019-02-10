@@ -12,7 +12,7 @@
 		<%= link_to 'Routes', routes_path, :class => "nav-link" %>
 
 		<!--<a class="nav-link" href="#">Sign out</a>-->
-		<%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+		<%= link_to 'Sign out', destroy_user_session_path, :class => "nav-link", method: :delete %>
 
 		<% else %>
 
@@ -32,9 +32,16 @@
     <h1 class="cover-heading">Welcome to TET Tracking-GPS.</h1>
     <p class="lead"> Tracking-gps in real-time, record your routes and save them but remember, they are not only routes, they are your trips.</p>
     <p class="lead">
-      <a href="#" class="btn btn-lg btn-secondary">Sign in</a>
+    	<%= link_to 'Sign in', new_user_session_path, :class => "btn btn-lg btn-secondary" %>
+      <!--<a href="#" class="btn btn-lg btn-secondary">Sign in</a>-->
     </p>
   </main>
+
+  <style type="text/css">
+  	.inner_cover{
+  		margin-top: -20px;
+  	}
+  </style>
 
 <!-- Geolocation (Leaflet) -->
 
