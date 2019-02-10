@@ -1,5 +1,3 @@
-<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-
 <%= form_with(model: route, local: true) do |form| %>
   <% if route.errors.any? %>
     <div id="error_explanation">
@@ -21,8 +19,7 @@
   <!--añadir campo coordenadas que sea el array positions de javascript, guardo ese array y en la vista show pongo el mapa que renderiza
   las coordenadas-->
   <div class="field">
-    <%= form.label :coordinates %>
-    <%= form.text_field :coordinates, :id=>"text_field" %>
+    <%= form.hidden_field :coordinates %>
   </div>
 
   <div class="actions">
@@ -30,13 +27,6 @@
   </div>
 <% end %>
 
-
-<script type="text/javascript">
-   var my_coordinates= "my@email.com"
-   $(document).ready(function(){
-        $("#text_field").val(my_coordinates);
-   });
-</script>
 
 <!-- Geolocalization -->
 
