@@ -6,6 +6,8 @@
     <%= f.email_field :email, autofocus: true, :class => "form-control", :id => "exampleInputEmail1", :placeholder => "Enter email", autocomplete: "email" %>
   </div>
 
+  <br>
+
     <div class="form-group">
     <%= f.label :password %><br />
     <%= f.password_field :password, :class => "form-control", :id => "exampleInputPassword1", :placeholder => "Password", autocomplete: "current-password" %>
@@ -25,4 +27,6 @@
 
 <%= render "devise/shared/links" %>
 
-<%= link_to 'Back', home_index_path %>
+    <p class="lead">
+    <%= link_to 'Back', home_index_path, :class => "btn btn-lg btn-secondary" %>
+    </p>
