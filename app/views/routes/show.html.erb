@@ -33,9 +33,9 @@
 	var trajectory = [[]];
 
    	for (var i=0; i < positions.length-1; i=i+2) {
-      trajectory.push([positions[i], positions[i+1]]); 
+      trajectory.push([parseFloat(positions[i]), parseFloat(positions[i+1])]); 
    	}
-
+    
    	console.log(trajectory);
 
 
