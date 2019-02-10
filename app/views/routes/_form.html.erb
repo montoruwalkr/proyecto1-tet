@@ -20,7 +20,7 @@
   las coordenadas-->
   <div class="field">
     <%= form.label :coordinates %>
-    <%= form.hidden_field :coordinates, :value=>["hola","hola2"] %>
+    <%= form.text_field :coordinates, :id=>"text_field" %>
   </div>
 
   <div class="actions">
@@ -28,6 +28,13 @@
   </div>
 <% end %>
 
+
+<script type="text/javascript">
+   var my_coordinates= "my@email.com"
+   $(document).ready(function(){
+        $("#text_field").val(my_coordinates);
+   });
+</script>
 
 <!-- Geolocalization -->
 

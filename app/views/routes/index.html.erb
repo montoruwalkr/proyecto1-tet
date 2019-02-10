@@ -16,11 +16,7 @@
     <% @routes.each do |route| %>
       <tr>
         <td><%= route.title %></td>
-        <td><%= route.coordinates %>
-              <% @route.coordinates do |a| %>
-              <%= a %> 
-              <% end %>
-        </td>
+        <td><%= route.coordinates %></td>
 
         <td><%= route.user.username %></td>
         <td><%= link_to 'Show', route %></td>
