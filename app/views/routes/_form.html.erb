@@ -16,12 +16,6 @@
     <%= form.text_field :title, id: :route_title, required: true %>
   </div>
 
-  <!--añadir campo coordenadas que sea el array positions de javascript, guardo ese array y en la vista show pongo el mapa que renderiza
-  las coordenadas-->
-  <div class="field">
-    <%= form.hidden_field :coordinates %>
-  </div>
-
   <div class="actions">
     <%= form.submit %>
   </div>
