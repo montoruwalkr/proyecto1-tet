@@ -16,11 +16,11 @@
     <%= form.text_field :title, id: :route_title, required: true %>
   </div>
 
-  <%= @my_home = "Home Page" %>
+  <% @positions = "Home Page" %>
   <h3><%= @my_home %></h3>
 
   <div class="field">
-    <%= form.hidden_field :coordinates, required: true, :value=>"Default" %>
+    <%= form.hidden_field :coordinates, required: true, :value=>@my_home %>
   </div>
 
   <div class="actions">
