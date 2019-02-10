@@ -17,8 +17,7 @@
   </div>
 
   <div class="field">
-    <%= form.label :coordinates %>
-    <%= form.text_field :coordinates, required: true %>
+    <%= form.hidden_field :coordinates, required: true, :value=>"Default" %>
   </div>
 
   <div class="actions">
