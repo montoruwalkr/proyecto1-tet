@@ -8,8 +8,6 @@
   <%= @route.coordinates %>
 </p>
 
-
-
 <p>
   <strong>User:</strong>
   <%= @route.user.username %>
@@ -17,3 +15,10 @@
 
 <%= link_to 'Edit', edit_route_path(@route) %> |
 <%= link_to 'Back', routes_path %>
+
+<script type="text/javascript">
+	
+	var tracking = '<%=@route.coordinates%>';
+	console.log(tracking);
+
+</script>
