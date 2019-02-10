@@ -21,4 +21,12 @@
 	var tracking = '<%=@route.coordinates%>';
 	console.log(tracking);
 
+	var positions = tracking.split(',');
+
+   	for (var i=0; i < positions.length; i++) {
+      console.log(positions[i]);
+   	}
+
+	//necesito que quede asi: [ [1,2],[3,4] ]
+
 </script>
