@@ -8,10 +8,6 @@
   <%= @route.user.username %>
 </p>
 
-<%= link_to 'Edit', edit_route_path(@route), :class=>"btn btn-lg btn-secondary" %> |
-<%= link_to 'Back', routes_path, :class=>"btn btn-lg btn-secondary" %>
-
-
 <style type="text/css">
   
   #map { height: 300px; width: 100%; }
@@ -19,6 +15,12 @@
 </style>
 
 <div id="map"></div>
+
+<br>
+<%= link_to 'Edit', edit_route_path(@route), :class=>"btn btn-lg btn-secondary" %>
+<br>
+<%= link_to 'Back', routes_path, :class=>"btn btn-lg btn-secondary" %>
+
 
 <script type="text/javascript">
 	
