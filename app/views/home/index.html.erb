@@ -6,21 +6,21 @@
          <% if current_user %>
 
         <!--<a class="nav-link active" href="#">New Route</a>-->
-		<a class="nav-link active"><%= link_to 'New Route', new_route_path %></a>
+		<%= link_to 'New Route', :class => "nav-link active", new_route_path %>
 
 		<!--<a class="nav-link" href="#">Routes</a>-->
-		<a class="nav-link"><%= link_to 'Routes', routes_path %></a>
+		<%= link_to 'Routes', :class => "nav-link", routes_path %>
 
 		<!--<a class="nav-link" href="#">Sign out</a>-->
-		<a class="nav-link"><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></a>
+		<%= link_to 'Sign out', :class => "nav-link", destroy_user_session_path, method: :delete %>
 
 		<% else %>
 
 		<!--<a class="nav-link" href="#">Sign up</a>-->
-		<a class="nav-link"><%= link_to 'Sign up', new_user_registration_path %></a>
+		<%= link_to 'Sign up', :class => "nav-link", new_user_registration_path %>
 
 		<!--<a class="nav-link" href="#">Sign in</a>-->
-		<a class="nav-link"><%= link_to 'Sign in', new_user_session_path %></a>
+		<%= link_to 'Sign in', :class => "nav-link", new_user_session_path %>
 
 		<% end %>
 
