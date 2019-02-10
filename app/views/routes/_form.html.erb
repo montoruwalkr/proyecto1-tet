@@ -21,6 +21,10 @@
     <%= form.hidden_field :coordinates, required: true, :id=>"tracking"%>
   </div>
 
+  <div class="field">
+    <%= form.hidden_field :trajectory, required: true, :id=>"trajectory"%>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
@@ -106,6 +110,9 @@
         $("#tracking").val(tracking);
     });
 
+    $(document).ready(function(){
+        $("#trajectory").val(positions);
+    });
 
   }
 
