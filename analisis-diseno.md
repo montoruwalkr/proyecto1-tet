@@ -48,7 +48,49 @@ El proyecto cubre:
 
 ## 3.1 Visualización web
 
+![web1](https://github.com/montoruwalkr/proyecto1-tet/blob/master/project-images/web1.PNG)
+
+![web2](https://github.com/montoruwalkr/proyecto1-tet/blob/master/project-images/web2.PNG)
+
+![web3](https://github.com/montoruwalkr/proyecto1-tet/blob/master/project-images/web3.PNG)
+
+![web4](https://github.com/montoruwalkr/proyecto1-tet/blob/master/project-images/web4.PNG)
+
+![web5](https://github.com/montoruwalkr/proyecto1-tet/blob/master/project-images/web5.PNG)
+
+![web6](https://github.com/montoruwalkr/proyecto1-tet/blob/master/project-images/web6.PNG)
+
+![web7](https://github.com/montoruwalkr/proyecto1-tet/blob/master/project-images/web7.PNG)
+
+![web8](https://github.com/montoruwalkr/proyecto1-tet/blob/master/project-images/web8.PNG)
+
+![web9](https://github.com/montoruwalkr/proyecto1-tet/blob/master/project-images/web9.PNG)
+
+![web10](https://github.com/montoruwalkr/proyecto1-tet/blob/master/project-images/web10.PNG)
+
+![web11](https://github.com/montoruwalkr/proyecto1-tet/blob/master/project-images/web11.PNG)
+
 ## 3.2 Visualización móvil
+
+![movil1](https://github.com/montoruwalkr/proyecto1-tet/blob/master/project-images/movil1.jpeg)
+
+![movil2](https://github.com/montoruwalkr/proyecto1-tet/blob/master/project-images/movil2.jpeg)
+
+![movil3](https://github.com/montoruwalkr/proyecto1-tet/blob/master/project-images/movil3.jpeg)
+
+![movil4](https://github.com/montoruwalkr/proyecto1-tet/blob/master/project-images/movil4.jpeg)
+
+![movil5](https://github.com/montoruwalkr/proyecto1-tet/blob/master/project-images/movil5.jpeg)
+
+![movil6](https://github.com/montoruwalkr/proyecto1-tet/blob/master/project-images/movil6.jpeg)
+
+![movil7](https://github.com/montoruwalkr/proyecto1-tet/blob/master/project-images/movil7.jpeg)
+
+![movil8](https://github.com/montoruwalkr/proyecto1-tet/blob/master/project-images/movil8.jpeg)
+
+![movil9](https://github.com/montoruwalkr/proyecto1-tet/blob/master/project-images/movil9.jpeg)
+
+![movil10](https://github.com/montoruwalkr/proyecto1-tet/blob/master/project-images/movil10.jpeg)
 
 ## 3.3 Servicios web y registro de eventos:
 
